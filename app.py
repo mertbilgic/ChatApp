@@ -7,6 +7,7 @@ import tornado.options
 
 # Import application modules.
 from handler.main import MainHandler
+from handler.chatsocket import ChatSocketHandler
 
 # Define port from command line parameter.
 tornado.options.define("port", default=8888, help="run on the given port", type=int)
@@ -17,6 +18,7 @@ class Application(tornado.web.Application):
 
         handlers = {
             (r"/",MainHandler),
+            (r"/socket",ChatSocketHandler)
         }
     
         settings = dict(
