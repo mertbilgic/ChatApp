@@ -22,6 +22,8 @@ socket.onmessage = function(event) {
     let message = JSON.parse(event.data);
     let messageBox = document.createElement("div");
     messageBox.innerHTML = message.user + ": " + message.message;
-    document.getElementById("messages").appendChild(messageBox);
+    const messages = document.getElementById('messages');
+    messages.appendChild(messageBox);
+    messages.scrollTop = messages.scrollHeight;
     console.log("Received Message From Server");
   };
