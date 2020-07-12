@@ -21,7 +21,7 @@ function sendMessage() {
 socket.onmessage = function(event) {
     let message = JSON.parse(event.data);
     let messageBox = document.createElement("div");
-    messageBox.innerHTML = message.user + ": " + message.message;
+    messageBox.innerHTML = "<b>" +message.user +"</b>"+ ": " + message.message;
     const messages = document.getElementById('messages');
     messages.appendChild(messageBox);
     messages.scrollTop = messages.scrollHeight;
