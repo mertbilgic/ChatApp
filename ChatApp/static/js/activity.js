@@ -27,3 +27,9 @@ socket.onmessage = function(event) {
     messages.scrollTop = messages.scrollHeight;
     console.log("Received Message From Server");
   };
+
+function enterPress(e){ 
+    if (e.keyCode == 13) {
+        sendMessage();
+    }
+}
