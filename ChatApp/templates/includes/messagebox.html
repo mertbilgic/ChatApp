@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="messages col-12" id="messages">
+    {% for message in messages %}
+        {%raw  message %}
+        <br>
+    {% end %}
+    </div>
+</div>
+<div class="row">
+    <div class="input-group col-12">
+        <input type="text" class="form-control" id="message" placeholder="Message" aria-describedby="basic-addon2"
+        onkeypress="enterPress(event)">
+        <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+</div>
