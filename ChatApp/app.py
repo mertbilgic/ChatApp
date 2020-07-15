@@ -4,12 +4,10 @@ from typing import Final
 
 # Tornado modules.
 import tornado.web
-import tornado.options
+from tornado.options import options
+from tornado.options import define
 
 # Import application modules.
-from handler.main import MainHandler
-from handler.chatsocket import ChatSocketHandler
-
 from route import routes
 from settings import settings
 
@@ -26,9 +24,9 @@ def main():
     # Create an instance of the main application.
     application = Application()
     # Start application by listening to desired port and starting IOLoop.
-    application.listen(tornado.options.options.port)
+    application.listen(options.port)
 
-    print (f"Starting server on http://localhost:{tornado.options.options.port}")
+    print (f"Starting server on http://localhost:{options.port}")
 
     try:
         tornado.ioloop.IOLoop.instance().start()
