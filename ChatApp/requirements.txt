@@ -1,1 +1,2 @@
 tornado==6.0.4
+wtforms-tornado==0.0.2
