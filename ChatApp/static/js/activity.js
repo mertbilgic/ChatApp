@@ -1,4 +1,5 @@
-let socket = new WebSocket("ws://localhost:8888/socket");
+let roomNo = location.pathname.replace('/room/', '').replace('/', '');
+let socket = new WebSocket("ws://localhost:8888/socket/"+roomNo);
 
 
 socket.onopen = function(e) {
